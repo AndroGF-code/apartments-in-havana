@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartments in Havana - Rent Beautiful Apartments in Cuba</title>
+    <meta name="description" content="Rent beautiful apartments in the heart of Havana, Cuba. Colonial and modern style apartments for short and long term rent.">
+    <meta name="keywords" content="rent, apartments, Havana, Cuba, accommodation, holiday, colonial, modern">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Decorative Palm Leaves -->
+    <div class="palm-leaf palm-leaf--top-left">🌴</div>
+    <div class="palm-leaf palm-leaf--bottom-right">🌴</div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__content">
+            <div class="header__logo">🏠 Apartments in Havana</div>
+            <nav class="header__nav">
+                <a href="#apartments" class="header__nav-link" data-i18n="nav.apartments">Apartments</a>
+                <a href="#gallery" class="header__nav-link" data-i18n="nav.gallery">Gallery</a>
+                <a href="#pricing" class="header__nav-link" data-i18n="nav.pricing">Pricing</a>
+                <a href="#services" class="header__nav-link" data-i18n="nav.services">Services</a>
+                <a href="#contact" class="header__nav-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <div class="header__lang">
+                <button class="header__lang-btn header__lang-btn--active" data-lang="en">EN</button>
+                <button class="header__lang-btn" data-lang="de">DE</button>
+                <button class="header__lang-btn" data-lang="es">ES</button>
+                <button class="header__lang-btn" data-lang="ru">RU</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero__content">
+            <h1 class="hero__title" data-i18n="hero.title">Marvelous Colonial Style Apartments</h1>
+            <p class="hero__subtitle" data-i18n="hero.subtitle">Beautiful apartments for short and long term rent in the heart of Havana, Cuba</p>
+            <a href="#apartments" class="hero__cta" data-i18n="hero.cta">View Our Apartments</a>
+        </div>
+    </section>
+
+    <!-- Apartments Section -->
+    <section id="apartments" class="section">
+        <div class="container">
+            <h2 class="section__title" data-i18n="apartments.title">Our Apartments</h2>
+            <div class="apartments">
+                <!-- Centro Havana Apartment -->
+                <article class="apartment fade-in">
+                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=800');" onclick="openGallery('centro')">
+                        <span class="apartment__tag" data-i18n="tag.colonial">Colonial</span>
+                    </div>
+                    <div class="apartment__content">
+                        <h3 class="apartment__title" data-i18n="apartment.centro.title">Centro Havana - Large Colonial</h3>
+                        <p class="apartment__location" data-i18n="apartment.centro.location">📍 Centro Havana, 130m from Malecón</p>
+                        <p data-i18n="apartment.centro.description">Beautiful colonial apartment in the heart of Havana! Perfect for anyone seeking relaxation, authenticity, or inspiration. The apartment is very large at 180 square meters, has wonderfully high ceilings, and is located in the central district of Centro Havana, just 130 meters from the famous Malecón waterfront promenade!</p>
+                        <div class="apartment__features">
+                            <span class="apartment__feature" data-i18n="feature.180sqm">180m²</span>
+                            <span class="apartment__feature" data-i18n="feature.highceilings">High Ceilings</span>
+                            <span class="apartment__feature" data-i18n="feature.upto8guests">Up to 8 Guests</span>
+                            <span class="apartment__feature" data-i18n="feature.malecon">Near Malecón</span>
+                            <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
+                        </div>
+                        <div class="apartment__price">
+                            <span data-i18n="price.from">From</span> €85 <span data-i18n="price.perday">/day</span>
+                            <br>
+                            <small data-i18n="price.entire">entire apartment</small>
+                        </div>
+                        <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="centro">Book Now</a>
+                    </div>
+                </article>
+
+                <!-- Centro Havana - Majestic Apartment -->
+                <article class="apartment fade-in" style="animation-delay: 0.1s;">
+                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/fa6a634c-8fd4-4fba-99d1-25797727e8b4.jpeg?w=800');" onclick="openGallery('centro2')">
+                        <span class="apartment__tag" data-i18n="tag.colonial">Colonial</span>
+                    </div>
+                    <div class="apartment__content">
+                        <h3 class="apartment__title" data-i18n="apartment.centro2.title">Centro Havana - Majestic</h3>
+                        <p class="apartment__location" data-i18n="apartment.centro2.location">📍 Centro Havana, 140m from Malecón</p>
+                        <p data-i18n="apartment.centro2.description">Beautiful colonial apartment for up to 7 people for rent in the heart of Havana. Central with a spacious rooftop terrace, in the authentic neighborhood of Centro Havana! It is only 140 meters from the famous Malecón waterfront promenade with its magnificent sunsets and near old Havana.</p>
+                        <div class="apartment__features">
+                            <span class="apartment__feature" data-i18n="feature.upto7guests">Up to 7 Guests</span>
+                            <span class="apartment__feature" data-i18n="feature.roofterrace">Rooftop Terrace</span>
+                            <span class="apartment__feature" data-i18n="feature.malecon">Near Malecón</span>
+                            <span class="apartment__feature" data-i18n="feature.oldhavana">Near Old Havana</span>
+                            <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
+                        </div>
+                        <div class="apartment__price">
+                            <span data-i18n="price.from">From</span> €75 <span data-i18n="price.perday">/day</span>
+                        </div>
+                        <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="centro2">Book Now</a>
+                    </div>
+                </article>
+
+                <!-- Miramar 1-Room Apartment -->
+                <article class="apartment fade-in" style="animation-delay: 0.2s;">
+                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/78121074/0f0f4021_original.jpg?w=800');" onclick="openGallery('miramar1')">
+                        <span class="apartment__tag" data-i18n="tag.modern">Modern</span>
+                    </div>
+                    <div class="apartment__content">
+                        <h3 class="apartment__title" data-i18n="apartment.miramar1.title">Miramar - 1 Room</h3>
+                        <p class="apartment__location" data-i18n="apartment.miramar1.location">📍 Embassy District, 250m from Sea</p>
+                        <p data-i18n="apartment.miramar1.description">Beautiful apartment (45 sqm) for 2 people in the quiet embassy district of Havana, only 250 meters from the sea! The bedroom is air-conditioned. Via a spiral staircase you can reach the flat roof where you can sunbathe and look out over the sea.</p>
+                        <div class="apartment__features">
+                            <span class="apartment__feature" data-i18n="feature.45sqm">45m²</span>
+                            <span class="apartment__feature" data-i18n="feature.2guests">2 Guests</span>
+                            <span class="apartment__feature" data-i18n="feature.1bath">1 Bathroom</span>
+                            <span class="apartment__feature" data-i18n="feature.rooftop">Rooftop Access</span>
+                            <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
+                        </div>
+                        <div class="apartment__price">
+                            <span data-i18n="price.from">From</span> €30 <span data-i18n="price.perday">/day</span>
+                        </div>
+                        <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="miramar1">Book Now</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section__title" data-i18n="gallery.title">Photo Gallery</h2>
+            
+            <!-- Centro Havana - Large Colonial Gallery -->
+            <div class="gallery__section" id="gallery-centro">
+                <h3 class="gallery__subtitle" data-i18n="apartment.centro.title">Centro Havana - Large Colonial</h3>
+                <div class="gallery">
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=400" alt="Centro Havana Interior" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/afa93b92-84aa-4e19-8198-1f81a3ca8772.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/afa93b92-84aa-4e19-8198-1f81a3ca8772.jpg?w=400" alt="Centro Havana Living Room" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/4d3b1cb9-a6d3-416a-bd2b-6bd1b50ea92b.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/4d3b1cb9-a6d3-416a-bd2b-6bd1b50ea92b.jpg?w=400" alt="Centro Havana Bedroom" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/10fcc482-222c-4346-9846-c195aa140669.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/10fcc482-222c-4346-9846-c195aa140669.jpg?w=400" alt="Centro Havana Kitchen" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/9ee551c7-8891-445f-9d1e-4cd7aaa22c9f.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/9ee551c7-8891-445f-9d1e-4cd7aaa22c9f.jpg?w=400" alt="Centro Havana Dining" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/c5b1d920-9aa9-4093-8ced-55df97fc3df7.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/c5b1d920-9aa9-4093-8ced-55df97fc3df7.jpg?w=400" alt="Centro Havana Balcony" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/9bb4b00c-9b79-4b3a-87d3-5bb1da071bc0.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/9bb4b00c-9b79-4b3a-87d3-5bb1da071bc0.jpg?w=400" alt="Centro Havana Detail" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/70561336/bb0af9f1_original.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/70561336/bb0af9f1_original.jpg?w=400" alt="Centro Havana View" class="gallery__image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centro Havana - Majestic Gallery -->
+            <div class="gallery__section" id="gallery-centro2">
+                <h3 class="gallery__subtitle" data-i18n="apartment.centro2.title">Centro Havana - Majestic</h3>
+                <div class="gallery">
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/fa6a634c-8fd4-4fba-99d1-25797727e8b4.jpeg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/fa6a634c-8fd4-4fba-99d1-25797727e8b4.jpeg?w=400" alt="Centro Majestic Living Room" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/42e1e5ce-13da-4026-8919-69daa4266116.jpeg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/42e1e5ce-13da-4026-8919-69daa4266116.jpeg?w=400" alt="Centro Majestic Bedroom" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/62bb4054-a93b-42ec-b699-90b8c049b702.jpeg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/62bb4054-a93b-42ec-b699-90b8c049b702.jpeg?w=400" alt="Centro Majestic Rooftop" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/b281bbb5-f805-40c8-a56c-7311fbf48d09.jpeg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/b281bbb5-f805-40c8-a56c-7311fbf48d09.jpeg?w=400" alt="Centro Majestic Interior" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/8a3dbe6b-4706-438c-a3f7-fe5249cd7eac.jpeg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/8a3dbe6b-4706-438c-a3f7-fe5249cd7eac.jpeg?w=400" alt="Centro Majestic Kitchen" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/c8a4354a-867a-4553-9c7a-50851065d010.jpeg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/c8a4354a-867a-4553-9c7a-50851065d010.jpeg?w=400" alt="Centro Majestic Bathroom" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/edd95ca7-02a7-4421-b1fc-88ab39db0e72.jpeg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/edd95ca7-02a7-4421-b1fc-88ab39db0e72.jpeg?w=400" alt="Centro Majestic Terrace View" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/7c641de2-85e8-4585-8244-8c602ecf408b.jpeg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/7c641de2-85e8-4585-8244-8c602ecf408b.jpeg?w=400" alt="Centro Majestic Detail" class="gallery__image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Miramar 1-Room Gallery -->
+            <div class="gallery__section" id="gallery-miramar1">
+                <h3 class="gallery__subtitle" data-i18n="apartment.miramar1.title">Miramar - 1 Room</h3>
+                <div class="gallery">
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/78121074/0f0f4021_original.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/78121074/0f0f4021_original.jpg?w=400" alt="Miramar 1-Room Interior" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/78121198/7142f8dd_original.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/78121198/7142f8dd_original.jpg?w=400" alt="Miramar 1-Room Bedroom" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/78121439/688c7dbd_original.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/78121439/688c7dbd_original.jpg?w=400" alt="Miramar 1-Room Kitchen" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/78529835/c7ebbba2_original.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/78529835/c7ebbba2_original.jpg?w=400" alt="Miramar 1-Room Bathroom" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/78526164/61a6e0c8_original.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/78526164/61a6e0c8_original.jpg?w=400" alt="Miramar 1-Room Rooftop View" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/78526231/409542b6_original.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/78526231/409542b6_original.jpg?w=400" alt="Miramar 1-Room Ocean View" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/75090da1-820c-473a-9d05-e252283915e2.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/75090da1-820c-473a-9d05-e252283915e2.jpg?w=400" alt="Miramar 1-Room Balcony" class="gallery__image">
+                    </div>
+                    <div class="gallery__item" onclick="openLightbox('https://a0.muscache.com/im/pictures/af1636c8-6365-43bf-828f-15a0da09c2c0.jpg?w=1200')">
+                        <img src="https://a0.muscache.com/im/pictures/af1636c8-6365-43bf-828f-15a0da09c2c0.jpg?w=400" alt="Miramar 1-Room Living Area" class="gallery__image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <h2 class="section__title" data-i18n="pricing.title">Rental Prices</h2>
+            <div class="pricing">
+                <table class="pricing__table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="pricing.duration">Duration</th>
+                            <th data-i18n="pricing.centro_large">Centro - Large</th>
+                            <th data-i18n="pricing.centro_majestic">Centro - Majestic</th>
+                            <th data-i18n="pricing.centro_room">Centro (Room)</th>
+                            <th data-i18n="pricing.miramar1">Miramar 1-Room</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-i18n="duration.1day">1 Day</td>
+                            <td>€85</td>
+                            <td>€75</td>
+                            <td>€22</td>
+                            <td>€30</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="duration.1week">1 Week</td>
+                            <td>€560</td>
+                            <td>€490</td>
+                            <td>€140</td>
+                            <td>€160</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="duration.2weeks">2 Weeks</td>
+                            <td>€950</td>
+                            <td>€840</td>
+                            <td>€238</td>
+                            <td>€280</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="duration.1month">1 Month</td>
+                            <td>€1,880</td>
+                            <td>€1,640</td>
+                            <td>€470</td>
+                            <td>€500</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="duration.3months">3 Months</td>
+                            <td>€1,800</td>
+                            <td>€1,580</td>
+                            <td>€450</td>
+                            <td>€480</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="duration.6months">6 Months</td>
+                            <td>€1,700</td>
+                            <td>€1,520</td>
+                            <td>-</td>
+                            <td>€430</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="duration.1year">12 Months</td>
+                            <td>€1,600</td>
+                            <td>€1,440</td>
+                            <td>-</td>
+                            <td>€430</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: #666;">
+                <small data-i18n="pricing.note">* Prices shown are per month for long-term rentals. Short-term available too!</small>
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section__title" data-i18n="services.title">Our Additional Services</h2>
+            <div class="services">
+                <div class="service fade-in">
+                    <div class="service__icon">📚</div>
+                    <h3 class="service__title" data-i18n="service.spanish.title">Spanish Lessons</h3>
+                    <p data-i18n="service.spanish.description">Individual Spanish lessons with experienced teachers. Learn the language during your stay!</p>
+                </div>
+                <div class="service fade-in" style="animation-delay: 0.1s;">
+                    <div class="service__icon">💃</div>
+                    <h3 class="service__title" data-i18n="service.salsa.title">Salsa Lessons</h3>
+                    <p data-i18n="service.salsa.description">Learn to dance Salsa with experienced instructors and go out to experience Cuban nightlife!</p>
+                </div>
+                <div class="service fade-in" style="animation-delay: 0.2s;">
+                    <div class="service__icon">🏙️</div>
+                    <h3 class="service__title" data-i18n="service.tours.title">City Tours</h3>
+                    <p data-i18n="service.tours.description">Guided tours to discover Havana's historic center, beaches, and hidden gems.</p>
+                </div>
+                <div class="service fade-in" style="animation-delay: 0.3s;">
+                    <div class="service__icon">🍽️</div>
+                    <h3 class="service__title" data-i18n="service.food.title">Food Recommendations</h3>
+                    <p data-i18n="service.food.description">Recommendations for the best places to eat and drink well in Havana.</p>
+                </div>
+                <div class="service fade-in" style="animation-delay: 0.4s;">
+                    <div class="service__icon">💆</div>
+                    <h3 class="service__title" data-i18n="service.massage.title">Massages</h3>
+                    <p data-i18n="service.massage.description">Corporal massages and cosmetic facial treatments available upon request.</p>
+                </div>
+                <div class="service fade-in" style="animation-delay: 0.5s;">
+                    <div class="service__icon">🧺</div>
+                    <h3 class="service__title" data-i18n="service.laundry.title">Laundry Service</h3>
+                    <p data-i18n="service.laundry.description">Washing service available at a very reasonable price.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section__title" data-i18n="contact.title">Contact Us</h2>
+            <div class="contact">
+                <form class="contact__form" id="contactForm">
+                    <div class="contact__group">
+                        <label class="contact__label" data-i18n="contact.name">Your Name</label>
+                        <input type="text" class="contact__input" name="name" required>
+                    </div>
+                    <div class="contact__group">
+                        <label class="contact__label" data-i18n="contact.email">Email Address</label>
+                        <input type="email" class="contact__input" name="email" required>
+                    </div>
+                    <div class="contact__group">
+                        <label class="contact__label" data-i18n="contact.apartment">Interested Apartment</label>
+                        <select class="contact__input" name="apartment">
+                            <option value="centro" data-i18n="apartment.centro.title">Centro Havana - Large Colonial</option>
+                            <option value="centro2" data-i18n="apartment.centro2.title">Centro Havana - Majestic</option>
+                            <option value="miramar1" data-i18n="apartment.miramar1.title">Miramar - 1 Room</option>
+                            <option value="other" data-i18n="contact.other">Other / General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="contact__group">
+                        <label class="contact__label" data-i18n="contact.dates">Preferred Dates</label>
+                        <input type="text" class="contact__input" name="dates" placeholder="e.g., March 15-22, 2024">
+                    </div>
+                    <div class="contact__group">
+                        <label class="contact__label" data-i18n="contact.message">Your Message</label>
+                        <textarea class="contact__textarea" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="contact__submit" data-i18n="contact.submit">Send Inquiry</button>
+                </form>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><strong data-i18n="contact.direct">Or contact us directly:</strong></p>
+                <p>📧 christoclemens(at)web.de</p>
+                <p>📞 +49 157 73254214</p>
+                <p>📍 Petersstraße 1, 60313 Frankfurt, Germany</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__content">
+            <div class="footer__section">
+                <h4 class="footer__title">Apartments in Havana</h4>
+                <p class="footer__text" data-i18n="footer.tagline">Your home away from home in beautiful Cuba</p>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title" data-i18n="footer.quick">Quick Links</h4>
+                <p><a href="#apartments" class="footer__link" data-i18n="nav.apartments">Apartments</a></p>
+                <p><a href="#pricing" class="footer__link" data-i18n="nav.pricing">Pricing</a></p>
+                <p><a href="#services" class="footer__link" data-i18n="nav.services">Services</a></p>
+                <p><a href="#contact" class="footer__link" data-i18n="nav.contact">Contact</a></p>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title" data-i18n="footer.languages">Languages</h4>
+                <p><span class="footer__link">English</span> | <span class="footer__link">Deutsch</span> | <span class="footer__link">Español</span> | <span class="footer__link">Русский</span></p>
+            </div>
+        </div>
+        <div class="container">
+            <p style="text-align: center; opacity: 0.7; margin-top: 2rem;">
+                © 2024 Apartments in Havana. <span data-i18n="footer.rights">All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox__close" onclick="closeLightbox()">×</button>
+        <img src="" alt="Gallery Image" class="lightbox__image" id="lightboxImage">
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>

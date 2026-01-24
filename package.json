@@ -1,0 +1,24 @@
+{
+  "name": "apartments-in-havana",
+  "version": "2.0.0",
+  "description": "Modern remake of apartments-in-havana.com - Beautiful rental apartments in Havana, Cuba",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve",
+    "build": "echo 'No build step needed - pure HTML/CSS/JS!'",
+    "deploy": "echo 'Deploy by uploading files to your web host'"
+  },
+  "keywords": [
+    "havana",
+    "cuba",
+    "apartments",
+    "rental",
+    "accommodation",
+    "holiday"
+  ],
+  "author": "Estrella & Christoph Dengler",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
