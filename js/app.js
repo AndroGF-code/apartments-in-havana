@@ -499,10 +499,58 @@ function setupScrollAnimations() {
   });
 }
 
+// Gallery Modal Functions
+function openGalleryModal(apartmentType) {
+  const modal = document.getElementById('galleryModal');
+  const modalGrid = document.getElementById('galleryModalGrid');
+  const modalTitle = document.getElementById('galleryModalTitle');
+
+  if (!modal || !modalGrid || !modalTitle) {
+    console.error('Modal elements not found');
+    return;
+  }
+
+  const images = apartmentGalleries[apartmentType];
+  if (!images) {
+    console.error('No images found for apartment:', apartmentType);
+    return;
+  }
+
+  const apartmentKey = `apartment.${apartmentType}.title`;
+  const apartmentName = translations[currentLang][apartmentKey] || apartmentKey;
+
+  modalTitle.textContent = apartmentName;
+
+  modalGrid.innerHTML = '';
+  images.forEach(imgUrl => {
+    const item = document.createElement('div');
+    item.className = 'gallery-modal__item';
+    item.onclick = function() { openLightbox(imgUrl); };
+
+    const img = document.createElement('img');
+    img.src = imgUrl.replace('w=1200', 'w=400');
+    img.alt = 'Apartment photo';
+    img.className = 'gallery-modal__image';
+
+    item.appendChild(img);
+    modalGrid.appendChild(item);
+  });
+
+  modal.classList.add('gallery-modal--active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeGalleryModal() {
+  const modal = document.getElementById('galleryModal');
+  modal.classList.remove('gallery-modal--active');
+  document.body.style.overflow = '';
+}
+
 // Close lightbox with Escape key
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closeLightbox();
+    closeGalleryModal();
   }
 });
 
