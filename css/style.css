@@ -750,37 +750,11 @@ a:hover {
   cursor: pointer;
 }
 
-.location__static-image {
+.location__static-iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border: none;
   display: block;
-}
-
-.location__static-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
-  transition: var(--transition-smooth);
-  z-index: 2;
-  cursor: pointer;
-}
-
-.location__static-overlay:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.location__static-text {
-  color: white;
-  font-weight: 900;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  letter-spacing: 1px;
-  animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -1043,13 +1017,14 @@ a:hover {
   text-transform: uppercase;
 }
 
-.map-modal__map-container {
+.map-modal__map-iframe {
   height: 70vh;
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-elevated);
   border: 3px solid var(--accent-color);
+  z-index: 1;
 }
 
 @media (max-width: 768px) {

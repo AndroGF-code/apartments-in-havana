@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apartments in Havana - Rent Beautiful Apartments in Cuba</title>
     <meta name="description" content="Rent beautiful apartments in heart of Havana, Cuba. Colonial and modern style apartments for short and long term rent.">
     <meta name="keywords" content="rent, apartments, Havana, Cuba, accommodation, holiday, colonial, modern">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmahnrz2vPcN5Z2ZxhIi5P+8wQ5dO2i0=" crossorigin=""/>
+
 </head>
 <body>
     <!-- Header -->
@@ -124,11 +124,13 @@
     <section id="location" class="section">
         <div class="container">
             <h2 class="section__title" data-i18n="location.title">Our Location</h2>
-            <div class="location__static">
-                <img src="https://a.tile.openstreetmap.org/13/3536/2398.png" alt="Havana Map" class="location__static-image">
-                <div class="location__static-overlay" onclick="openMapModal()">
-                    <span class="location__static-text">📍 Click to view interactive map</span>
-                </div>
+            <div class="location__static" onclick="openMapModal()">
+                <iframe
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-82.42%2C23.10%2C-82.35%2C23.16&layer=mapnik&marker=23.1355%2C-82.3813%2C23.1340%2C-82.3830%2C23.1295%2C-82.3980"
+                    class="location__static-iframe"
+                    loading="lazy"
+                    title="Havana Map">
+                </iframe>
             </div>
         </div>
     </section>
@@ -247,81 +249,23 @@
     <div class="map-modal" id="mapModal">
         <button class="map-modal__close" onclick="closeMapModal()">×</button>
         <h3 class="map-modal__title" data-i18n="location.title">Our Location</h3>
-        <div id="mapModalMap" class="map-modal__map-container"></div>
+        <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-82.42%2C23.10%2C-82.35%2C23.16&layer=mapnik&marker=23.1355%2C-82.3813%2C23.1340%2C-82.3830%2C23.1295%2C-82.3980"
+            class="map-modal__map-iframe"
+            loading="lazy"
+            title="Havana Map">
+        </iframe>
     </div>
 
      <!-- JavaScript -->
     <script src="js/app.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
-        // Lazy-load modal map on page load (ready before click)
-        let modalMap = null;
-        let modalMapInitialized = false;
-        
-        function initModalMap() {
-            if (!modalMapInitialized) {
-                modalMapInitialized = true;
-                setTimeout(() => {
-                    modalMap = L.map('mapModalMap').setView([23.1330, -82.3900], 14);
-
-                    // Add CartoDB Positron tiles (fastest available)
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CartoDB</a>',
-                        subdomains: 'abcd',
-                        maxZoom: 19
-                    }).addTo(modalMap);
-
-                    // Apartment locations
-                    const apartments = [
-                        {
-                            name: 'Centro Havana - Large Colonial',
-                            coords: [23.1355, -82.3813],
-                            description: '180m² colonial apartment, 130m from Malecón'
-                        },
-                        {
-                            name: 'Centro Havana - Majestic',
-                            coords: [23.1340, -82.3830],
-                            description: 'Colonial apartment with rooftop terrace, 140m from Malecón'
-                        },
-                        {
-                            name: 'Miramar - 1 Room',
-                            coords: [23.1295, -82.3980],
-                            description: '45m² modern apartment in embassy district, 250m from sea'
-                        }
-                    ];
-
-                    // Add markers
-                    apartments.forEach(apartment => {
-                        const marker = L.marker(apartment.coords).addTo(modalMap);
-                        marker.bindPopup(`
-                            <div style="font-family: 'Poppins', sans-serif;">
-                                <strong style="color: #002A8F; font-size: 14px;">${apartment.name}</strong>
-                                <p style="color: #5D6D7E; font-size: 12px; margin: 5px 0 0 0;">${apartment.description}</p>
-                            </div>
-                        `);
-                    });
-                }, 100);
-            }
-        }
-        
-        // Initialize modal map when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            initModalMap();
-        });
-        
         function openMapModal() {
             const modal = document.getElementById('mapModal');
             modal.classList.add('map-modal--active');
             document.body.style.overflow = 'hidden';
-            
-            // Map is already initialized, just invalidate size
-            if (modalMap) {
-                setTimeout(() => {
-                    modalMap.invalidateSize();
-                }, 100);
-            }
         }
-        
+
         function closeMapModal() {
             const modal = document.getElementById('mapModal');
             modal.classList.remove('map-modal--active');
