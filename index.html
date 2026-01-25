@@ -124,7 +124,12 @@
     <section id="location" class="section">
         <div class="container">
             <h2 class="section__title" data-i18n="location.title">Our Location</h2>
-            <div id="locationPreview" class="location__map" onclick="openMapModal()"></div>
+            <div class="location__static">
+                <img src="https://a.tile.openstreetmap.org/13/3536/2398.png" alt="Havana Map" class="location__static-image">
+                <div class="location__static-overlay" onclick="openMapModal()">
+                    <span class="location__static-text">📍 Click to view interactive map</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -249,40 +254,20 @@
     <script src="js/app.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
-        // Initialize small preview map
-        const previewMap = L.map('locationPreview').setView([23.1330, -82.3900], 13);
-        
-        // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19
-        }).addTo(previewMap);
-        
-        // Disable interactions on preview map (just for show)
-        previewMap.dragging.disable();
-        previewMap.touchZoom.disable();
-        previewMap.doubleClickZoom.disable();
-        previewMap.scrollWheelZoom.disable();
-        previewMap.boxZoom.disable();
-        previewMap.keyboard.disable();
-        previewMap.zoomControl.remove();
-        
-        // Initialize modal map (lazy load)
+        // Lazy-load modal map on page load (ready before click)
         let modalMap = null;
+        let modalMapInitialized = false;
         
-        function openMapModal() {
-            const modal = document.getElementById('mapModal');
-            modal.classList.add('map-modal--active');
-            document.body.style.overflow = 'hidden';
-            
-            // Initialize map if not already done
-            if (!modalMap) {
+        function initModalMap() {
+            if (!modalMapInitialized) {
+                modalMapInitialized = true;
                 setTimeout(() => {
                     modalMap = L.map('mapModalMap').setView([23.1330, -82.3900], 14);
 
-                    // Add OpenStreetMap tiles
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    // Add CartoDB Positron tiles (fastest available)
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CartoDB</a>',
+                        subdomains: 'abcd',
                         maxZoom: 19
                     }).addTo(modalMap);
 
@@ -316,7 +301,21 @@
                         `);
                     });
                 }, 100);
-            } else {
+            }
+        }
+        
+        // Initialize modal map when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initModalMap();
+        });
+        
+        function openMapModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.add('map-modal--active');
+            document.body.style.overflow = 'hidden';
+            
+            // Map is already initialized, just invalidate size
+            if (modalMap) {
                 setTimeout(() => {
                     modalMap.invalidateSize();
                 }, 100);
