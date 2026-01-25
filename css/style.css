@@ -175,12 +175,12 @@ a:hover {
 
 /* Hero Section - Cuban Red & Blue Overlay */
 .hero {
-  background: 
+  background:
     linear-gradient(135deg, rgba(207, 20, 43, 0.8), rgba(0, 42, 143, 0.85)),
     url('https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=1920') center/cover;
   background-attachment: fixed;
   color: var(--text-light);
-  padding: 7rem 0;
+  padding: 7rem 0 2rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -236,14 +236,15 @@ a:hover {
 
 /* Sections */
 .section {
-  padding: 5rem 0;
+  padding: 0 0 1rem 0;
   position: relative;
 }
 
 .section__title {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  margin-top: -2.5rem;
   color: var(--primary-color);
   position: relative;
   font-weight: 900;
@@ -251,22 +252,13 @@ a:hover {
   text-transform: uppercase;
 }
 
-.section__title::before {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: var(--accent-color);
-  margin: 1rem auto;
-  border-radius: 3px;
-}
-
 .section__title::after {
   content: '★';
   display: block;
   font-size: 2rem;
   color: var(--red-primary);
-  margin-top: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Apartments Grid */
@@ -1153,7 +1145,7 @@ a:hover {
 .footer {
   background: var(--text-dark);
   color: var(--text-light);
-  padding: 5rem 0 3rem;
+  padding: 2rem 0 3rem;
   text-align: center;
   border-top: 5px solid var(--accent-color);
 }
