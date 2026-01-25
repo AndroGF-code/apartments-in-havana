@@ -372,7 +372,7 @@ a:hover {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.9);
-  z-index: 2000;
+  z-index: 3000;
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -387,6 +387,8 @@ a:hover {
   max-height: 90vh;
   border-radius: 8px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  z-index: 1;
+  position: relative;
 }
 
 .lightbox__close {
@@ -401,6 +403,7 @@ a:hover {
   font-size: 1.5rem;
   cursor: pointer;
   transition: var(--transition);
+  z-index: 3001;
 }
 
 .lightbox__close:hover {
@@ -506,6 +509,7 @@ a:hover {
   font-size: 1.5rem;
   cursor: pointer;
   transition: var(--transition);
+  z-index: 2001;
 }
 
 .gallery-modal__close:hover {

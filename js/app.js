@@ -424,9 +424,12 @@ function openLightbox(imageSrc) {
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightboxImage');
   
-  lightboxImage.src = imageSrc;
+  lightboxImage.src = '';
   lightbox.classList.add('lightbox--active');
   document.body.style.overflow = 'hidden';
+  setTimeout(() => {
+    lightboxImage.src = imageSrc;
+  }, 50);
 }
 
 function closeLightbox() {
@@ -498,6 +501,40 @@ function setupScrollAnimations() {
     observer.observe(el);
   });
 }
+
+// Apartment Gallery Data
+const apartmentGalleries = {
+  centro: [
+    'https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/afa93b92-84aa-4e19-8198-1f81a3ca8772.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/4d3b1cb9-a6d3-416a-bd2b-6bd1b50ea92b.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/10fcc482-222c-4346-9846-c195aa140669.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/9ee551c7-8891-445f-9d1e-4cd7aaa22c9f.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/c5b1d920-9aa9-4093-8ced-55df97fc3df7.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/9bb4b00c-9b79-4b3a-87d3-5bb1da071bc0.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/70561336/bb0af9f1_original.jpg?w=1200'
+  ],
+  centro2: [
+    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/fa6a634c-8fd4-4fba-99d1-25797727e8b4.jpeg?w=1200',
+    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/42e1e5ce-13da-4026-8919-69daa4266116.jpeg?w=1200',
+    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/62bb4054-a93b-42ec-b699-90b8c049b702.jpeg?w=1200',
+    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/b281bbb5-f805-40c8-a56c-7311fbf48d09.jpeg?w=1200',
+    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/8a3dbe6b-4706-438c-a3f7-fe5249cd7eac.jpeg?w=1200',
+    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/c8a4354a-867a-4553-9c7a-50851065d010.jpeg?w=1200',
+    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/edd95ca7-02a7-4421-b1fc-88ab39db0e72.jpeg?w=1200',
+    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/7c641de2-85e8-4585-8244-8c602ecf408b.jpeg?w=1200'
+  ],
+  miramar1: [
+    'https://a0.muscache.com/im/pictures/78121074/0f0f4021_original.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/78121198/7142f8dd_original.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/78121439/688c7dbd_original.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/78529835/c7ebbba2_original.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/78526164/61a6e0c8_original.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/78526231/409542b6_original.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/75090da1-820c-473a-9d05-e252283915e2.jpg?w=1200',
+    'https://a0.muscache.com/im/pictures/af1636c8-6365-43bf-828f-15a0da09c2c0.jpg?w=1200'
+  ]
+};
 
 // Gallery Modal Functions
 function openGalleryModal(apartmentType) {
