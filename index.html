@@ -48,8 +48,8 @@
             <h2 class="section__title" data-i18n="apartments.title">Our Apartments</h2>
             <div class="apartments">
                 <!-- Centro Havana Apartment -->
-                <article class="apartment fade-in">
-                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=800');" onclick="openGallery('centro')">
+                 <article class="apartment fade-in">
+                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=800');">
                         <span class="apartment__tag" data-i18n="tag.colonial">Colonial</span>
                     </div>
                     <div class="apartment__content">
@@ -68,13 +68,14 @@
                             <br>
                             <small data-i18n="price.entire">entire apartment</small>
                         </div>
+                        <button type="button" class="apartment__photos" data-i18n="cta.photos" onclick="openGalleryModal('centro')">View Photos</button>
                         <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="centro">Book Now</a>
                     </div>
                 </article>
 
                 <!-- Centro Havana - Majestic Apartment -->
-                <article class="apartment fade-in" style="animation-delay: 0.1s;">
-                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/fa6a634c-8fd4-4fba-99d1-25797727e8b4.jpeg?w=800');" onclick="openGallery('centro2')">
+                 <article class="apartment fade-in" style="animation-delay: 0.1s;">
+                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/fa6a634c-8fd4-4fba-99d1-25797727e8b4.jpeg?w=800');">
                         <span class="apartment__tag" data-i18n="tag.colonial">Colonial</span>
                     </div>
                     <div class="apartment__content">
@@ -91,13 +92,14 @@
                         <div class="apartment__price">
                             <span data-i18n="price.from">From</span> €75 <span data-i18n="price.perday">/day</span>
                         </div>
+                        <button type="button" class="apartment__photos" data-i18n="cta.photos" onclick="openGalleryModal('centro2')">View Photos</button>
                         <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="centro2">Book Now</a>
                     </div>
                 </article>
 
                 <!-- Miramar 1-Room Apartment -->
-                <article class="apartment fade-in" style="animation-delay: 0.2s;">
-                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/78121074/0f0f4021_original.jpg?w=800');" onclick="openGallery('miramar1')">
+                 <article class="apartment fade-in" style="animation-delay: 0.2s;">
+                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/78121074/0f0f4021_original.jpg?w=800');">
                         <span class="apartment__tag" data-i18n="tag.modern">Modern</span>
                     </div>
                     <div class="apartment__content">
@@ -114,6 +116,7 @@
                         <div class="apartment__price">
                             <span data-i18n="price.from">From</span> €30 <span data-i18n="price.perday">/day</span>
                         </div>
+                        <button type="button" class="apartment__photos" data-i18n="cta.photos" onclick="openGalleryModal('miramar1')">View Photos</button>
                         <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="miramar1">Book Now</a>
                     </div>
                 </article>
@@ -407,6 +410,13 @@
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <button class="lightbox__close" onclick="closeLightbox()">×</button>
         <img src="" alt="Gallery Image" class="lightbox__image" id="lightboxImage">
+    </div>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="galleryModal">
+        <button class="gallery-modal__close" onclick="closeGalleryModal()">×</button>
+        <h3 class="gallery-modal__title" id="galleryModalTitle">Apartment Gallery</h3>
+        <div class="gallery-modal__grid" id="galleryModalGrid"></div>
     </div>
 
     <!-- JavaScript -->
