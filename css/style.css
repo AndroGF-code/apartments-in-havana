@@ -134,10 +134,13 @@ a:hover {
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.3px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .header__nav-link:hover, .header__nav-link--active {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--bg-white);
+  color: var(--primary-color);
+  border-color: var(--accent-color);
 }
 
 .header__lang {
