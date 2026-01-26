@@ -45,12 +45,12 @@
             <div class="apartments">
                 <!-- Centro Havana Apartment -->
                  <article class="apartment fade-in">
-                    <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=800');">
-                        <span class="apartment__tag" data-i18n="tag.colonial">Colonial</span>
-                    </div>
-                    <div class="apartment__content">
-                        <h3 class="apartment__title" data-i18n="apartment.centro.title">Centro Havana - Large Colonial</h3>
-                        <p class="apartment__location" data-i18n="apartment.centro.location">📍 Centro Havana, 130m from Malecón</p>
+                     <div class="apartment__image" style="background-image: url('https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=800');">
+                         <span class="apartment__tag" data-i18n="tag.colonial">Colonial</span>
+                     </div>
+                     <div class="apartment__content">
+                         <h3 class="apartment__title" data-i18n="apartment.centro.title">Centro Havana - Large Colonial</h3>
+                         <p class="apartment__location" data-i18n="apartment.centro.location">📍 104 Campanario, between Lagunas and Animas</p>
                         <p data-i18n="apartment.centro.description">Beautiful colonial apartment in the heart of Havana! Perfect for anyone seeking relaxation, authenticity, or inspiration. The apartment is very large at 180 square meters, has wonderfully high ceilings, and is located in the central district of Centro Havana, just 130 meters from the famous Malecón waterfront promenade!</p>
                         <div class="apartment__features">
                             <span class="apartment__feature" data-i18n="feature.180sqm">180m²</span>
@@ -61,8 +61,6 @@
                         </div>
                         <div class="apartment__price">
                             <span data-i18n="price.from">From</span> €85 <span data-i18n="price.perday">/day</span>
-                            <br>
-                            <small data-i18n="price.entire">entire apartment</small>
                         </div>
                         <button type="button" class="apartment__photos" data-i18n="cta.photos" onclick="openGalleryModal('centro')">View Photos</button>
                         <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="centro">Book Now</a>
@@ -76,7 +74,7 @@
                     </div>
                     <div class="apartment__content">
                         <h3 class="apartment__title" data-i18n="apartment.centro2.title">Centro Havana - Majestic</h3>
-                        <p class="apartment__location" data-i18n="apartment.centro2.location">📍 Centro Havana, 140m from Malecón</p>
+                         <p class="apartment__location" data-i18n="apartment.centro2.location">📍 108 Manrique, between Lagunas and Animas</p>
                         <p data-i18n="apartment.centro2.description">Beautiful colonial apartment for up to 7 people for rent in the heart of Havana. Central with a spacious rooftop terrace, in the authentic neighborhood of Centro Havana! It is only 140 meters from the famous Malecón waterfront promenade with its magnificent sunsets and near old Havana.</p>
                         <div class="apartment__features">
                             <span class="apartment__feature" data-i18n="feature.upto7guests">Up to 7 Guests</span>
@@ -100,7 +98,7 @@
                     </div>
                     <div class="apartment__content">
                         <h3 class="apartment__title" data-i18n="apartment.miramar1.title">Miramar - 1 Room</h3>
-                        <p class="apartment__location" data-i18n="apartment.miramar1.location">📍 Embassy District, 250m from Sea</p>
+                         <p class="apartment__location" data-i18n="apartment.miramar1.location">📍 3ra A, between 86 and 88</p>
                         <p data-i18n="apartment.miramar1.description">Beautiful apartment (45 sqm) for 2 people in the quiet embassy district of Havana, only 250 meters from the sea! The bedroom is air-conditioned. Via a spiral staircase you can reach the flat roof where you can sunbathe and look out over the sea.</p>
                         <div class="apartment__features">
                             <span class="apartment__feature" data-i18n="feature.45sqm">45m²</span>
@@ -124,10 +122,10 @@
     <section id="location" class="section">
         <div class="container">
             <h2 class="section__title" data-i18n="location.title">Our Location</h2>
-            <div class="location__static" onclick="openMapModal()">
+            <div class="location__map">
                 <iframe
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-82.42%2C23.10%2C-82.35%2C23.16&layer=mapnik&marker=23.1355%2C-82.3813%2C23.1340%2C-82.3830%2C23.1295%2C-82.3980"
-                    class="location__static-iframe"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-82.42%2C23.10%2C-82.35%2C23.16&layer=mapnik&marker=23.1355%2C-82.3813%7C23.1340%2C-82.3830%7C23.1295%2C-82.3980"
+                    class="location__map-iframe"
                     loading="lazy"
                     title="Havana Map">
                 </iframe>
@@ -245,33 +243,8 @@
         <div class="gallery-modal__grid" id="galleryModalGrid"></div>
     </div>
     
-    <!-- Map Modal -->
-    <div class="map-modal" id="mapModal">
-        <button class="map-modal__close" onclick="closeMapModal()">×</button>
-        <h3 class="map-modal__title" data-i18n="location.title">Our Location</h3>
-        <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-82.42%2C23.10%2C-82.35%2C23.16&layer=mapnik&marker=23.1355%2C-82.3813%2C23.1340%2C-82.3830%2C23.1295%2C-82.3980"
-            class="map-modal__map-iframe"
-            loading="lazy"
-            title="Havana Map">
-        </iframe>
-    </div>
-
-     <!-- JavaScript -->
+      <!-- JavaScript -->
     <script src="js/app.js"></script>
-    <script>
-        function openMapModal() {
-            const modal = document.getElementById('mapModal');
-            modal.classList.add('map-modal--active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMapModal() {
-            const modal = document.getElementById('mapModal');
-            modal.classList.remove('map-modal--active');
-            document.body.style.overflow = '';
-        }
-    </script>
 
 </body>
 </html>
