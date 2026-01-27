@@ -689,11 +689,12 @@ document.addEventListener('DOMContentLoaded', function() {
       apartmentSelect.addEventListener('change', updateGuestOptions);
       updateGuestOptions();
     }
+  }
 
-    // Animate elements on scroll
-    setupScrollAnimations();
-  });
+  // Animate elements on scroll
+  setupScrollAnimations();
 });
+
 
 // Set language
 function setLanguage(lang) {
