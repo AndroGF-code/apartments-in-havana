@@ -1219,7 +1219,7 @@ a:hover {
   }
 
   .header__nav-link {
-    padding: 0.5rem 0.9rem;
+    padding: 0.45rem 0.8rem;
     font-size: 0.85rem;
     text-align: center;
   }
@@ -1299,7 +1299,7 @@ a:hover {
   }
 
   .header__nav-link {
-    padding: 0.35rem 0.7rem;
+    padding: 0.3rem 0.6rem;
     font-size: 0.7rem;
     text-align: center;
   }
