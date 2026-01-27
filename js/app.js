@@ -654,12 +654,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update guest options based on apartment selection
     const apartmentSelect = document.querySelector('select[name="apartment"]');
     const guestsSelect = document.getElementById('guestsSelect');
-    
-    console.log('Apartment select found:', !!apartmentSelect);
-    console.log('Guests select found:', !!guestsSelect);
 
     if (apartmentSelect && guestsSelect) {
-      console.log('Setting up guest options for apartment:', apartmentSelect.value);
       const maxGuests = {
         centro: 11,
         centro2: 7,
@@ -690,10 +686,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       };
 
-      apartmentSelect.addEventListener('change', () => {
-        console.log('Apartment changed to:', apartmentSelect.value);
-        updateGuestOptions();
-      });
+      apartmentSelect.addEventListener('change', updateGuestOptions);
       updateGuestOptions();
     }
 
