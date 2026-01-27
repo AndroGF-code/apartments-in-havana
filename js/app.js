@@ -555,7 +555,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Form submission
+  // Form submission via Web3Forms
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     // Disable past dates
@@ -589,9 +589,62 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-      handleFormSubmit(this);
+
+      const submitBtn = contactForm.querySelector('.contact__submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = currentLang === 'de' ? 'Wird gesendet...' :
+                           currentLang === 'es' ? 'Enviando...' :
+                           currentLang === 'ru' ? 'Отправка...' :
+                           'Sending...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData.entries());
+      
+      // Format dates for email
+      const dateRange = `${data.date_start} → ${data.date_end}`;
+      formData.set('date_range', dateRange);
+      formData.delete('date_start');
+      formData.delete('date_end');
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(Object.fromEntries(formData))
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          const successMsg = currentLang === 'de' ? 'Vielen Dank! Ihre Anfrage wurde gesendet.' :
+                             currentLang === 'es' ? '¡Gracias! Su solicitud ha sido enviada.' :
+                             currentLang === 'ru' ? 'Спасибо! Ваш запрос был отправлен.' :
+                             'Thank you! Your inquiry has been sent.';
+          alert(successMsg);
+          contactForm.reset();
+        } else {
+          const errorMsg = currentLang === 'de' ? 'Fehler beim Senden. Bitte versuchen Sie es erneut.' :
+                             currentLang === 'es' ? 'Error al enviar. Por favor intente de nuevo.' :
+                             currentLang === 'ru' ? 'Ошибка отправки. Пожалуйста, попробуйте снова.' :
+                             'Error sending. Please try again.';
+          alert(errorMsg + ' ' + (result.message || ''));
+        }
+      } catch (error) {
+        const errorMsg = currentLang === 'de' ? 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.' :
+                           currentLang === 'es' ? 'Ocurrió un error. Por favor intente de nuevo.' :
+                           currentLang === 'ru' ? 'Произошла ошибка. Пожалуйста, попробуйте снова.' :
+                           'An error occurred. Please try again.';
+        alert(errorMsg);
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
     });
   }
 

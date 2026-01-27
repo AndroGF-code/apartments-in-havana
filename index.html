@@ -176,7 +176,10 @@
         <div class="container">
             <h2 class="section__title" data-i18n="contact.title">Contact Us</h2>
             <div class="contact">
-                <form class="contact__form" id="contactForm">
+                <form class="contact__form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="121e7ab8-2fd0-49f3-861f-f8182a1d7045">
+                    <input type="hidden" name="subject" value="New Inquiry - Apartments in Havana">
+                    <input type="checkbox" name="botcheck" class="botcheck" style="display: none;">
                     <div class="contact__group">
                         <label class="contact__label" data-i18n="contact.name">Your Name</label>
                         <input type="text" class="contact__input" name="name" required>
