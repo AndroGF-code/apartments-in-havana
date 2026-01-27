@@ -605,6 +605,70 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
+    // Initialize Flatpickr with availability
+    let flatpickrStart, flatpickrEnd;
+    let busyDates = [];
+
+    const fetchAvailability = async function() {
+      if (!apartmentSelect || !dateStart || !dateEnd) return;
+
+      const apartment = apartmentSelect.value;
+      
+      try {
+        const response = await fetch('/availability?apartment=' + apartment);
+        
+        if (response.ok) {
+          const data = await response.json();
+          busyDates = data.busy || [];
+          updateFlatpickrDisable();
+        }
+      } catch (error) {
+        console.log('Could not fetch availability:', error);
+      }
+    };
+
+    const updateFlatpickrDisable = function() {
+      if (flatpickrStart) {
+        flatpickrStart.set('disable', busyDates.map(function(range) {
+          return { from: range.start, to: range.end };
+        }));
+      }
+      if (flatpickrEnd) {
+        flatpickrEnd.set('disable', busyDates.map(function(range) {
+          return { from: range.start, to: range.end };
+        }));
+      }
+    };
+
+    if (dateStart && dateEnd && typeof flatpickr !== 'undefined') {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      flatpickrStart = flatpickr(dateStart, {
+        minDate: today,
+        dateFormat: 'Y-m-d',
+        disable: [],
+        onChange: function(selectedDates, dateStr) {
+          if (flatpickrEnd) {
+            flatpickrEnd.set('minDate', dateStr);
+          }
+        }
+      });
+
+      flatpickrEnd = flatpickr(dateEnd, {
+        minDate: today,
+        dateFormat: 'Y-m-d',
+        disable: []
+      });
+
+      if (apartmentSelect) {
+        apartmentSelect.addEventListener('change', fetchAvailability);
+        fetchAvailability();
+      }
+    } else if (apartmentSelect) {
+      apartmentSelect.addEventListener('change', fetchAvailability);
+    }
+
     contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 

@@ -1,0 +1,10 @@
+name = "apartments-calendar"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+# These will be set in Cloudflare Dashboard
+# CENTRO_CALENDAR_ID = "your-calendar-id@group.calendar.google.com"
+# MAJESTIC_CALENDAR_ID = "your-calendar-id@group.calendar.google.com"
+# MIRAMAR_CALENDAR_ID = "your-calendar-id@group.calendar.google.com"
+# GOOGLE_SERVICE_ACCOUNT_EMAIL = "your-service-account@project.iam.gserviceaccount.com"
