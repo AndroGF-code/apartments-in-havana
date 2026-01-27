@@ -563,23 +563,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const dateStart = contactForm.querySelector('input[name="date_start"]');
     const dateEnd = contactForm.querySelector('input[name="date_end"]');
 
-    if (dateStart) {
-      dateStart.min = today;
-    }
-    if (dateEnd) {
-      dateEnd.min = today;
-    }
-
     if (dateStart && dateEnd) {
+      // Always enforce past dates are disabled
+      const enforceMinDates = () => {
+        dateStart.setAttribute('min', today);
+        dateEnd.setAttribute('min', today);
+      };
+      enforceMinDates();
+
       dateStart.addEventListener('change', function() {
-        dateEnd.min = this.value;
+        enforceMinDates();
+        dateEnd.setAttribute('min', this.value);
         if (dateEnd.value && dateEnd.value < this.value) {
           dateEnd.value = this.value;
         }
       });
 
       dateEnd.addEventListener('change', function() {
-        dateStart.max = this.value;
+        enforceMinDates();
+        if (this.value) {
+          dateStart.setAttribute('max', this.value);
+        } else {
+          dateStart.removeAttribute('max');
+        }
       });
     }
 
