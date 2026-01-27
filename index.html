@@ -206,6 +206,22 @@
                         </div>
                     </div>
                     <div class="contact__group">
+                        <label class="contact__label" data-i18n="contact.guests">Number of Guests</label>
+                        <select class="contact__input" id="guestsSelect" name="guests" required>
+                            <option value="1">1 Guest</option>
+                            <option value="2" selected>2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="9">9 Guests</option>
+                            <option value="10">10 Guests</option>
+                            <option value="11">11 Guests</option>
+                        </select>
+                    </div>
+                    <div class="contact__group">
                         <label class="contact__label" data-i18n="contact.message">Your Message</label>
                         <textarea class="contact__textarea" name="message" required></textarea>
                     </div>
@@ -214,9 +230,8 @@
             </div>
             <div style="text-align: center; margin-top: 1rem;">
                 <p><strong data-i18n="contact.direct">Or contact us directly:</strong></p>
-                <p>📧 christoclemens(at)web.de</p>
                 <p>📞 +49 157 73254214</p>
-                <p>📍 Petersstraße 1, 60313 Frankfurt, Germany</p>
+                <p>📍 Haingrabenstraße 57, 60488 Frankfurt, Germany</p>
             </div>
         </div>
     </section>
@@ -231,7 +246,10 @@
         </div>
         <div class="container">
             <p style="text-align: center; opacity: 0.7; margin-top: 1rem;">
-                © 2024 Apartments in Havana. <span data-i18n="footer.rights">All rights reserved.</span>
+                © 2026 Apartments in Havana. <span data-i18n="footer.rights">All rights reserved.</span>
+            </p>
+            <p style="text-align: center; opacity: 0.7; margin-top: 1.5rem; font-size: 0.85rem; font-style: italic;">
+                With &lt;3 designed by Andro García Fagundo
             </p>
         </div>
     </footer>
@@ -255,6 +273,9 @@
         <h3 class="apartment-modal__title" id="apartmentModalTitle">Apartment Details</h3>
         <div class="apartment-modal__content" id="apartmentModalContent"></div>
     </div>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
 
       <!-- JavaScript -->
     <script src="js/app.js"></script>

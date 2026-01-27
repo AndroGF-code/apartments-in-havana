@@ -120,6 +120,7 @@ const translations = {
     "contact.apartment": "Interested Apartment",
     "contact.other": "Other / General Inquiry",
     "contact.dates": "Preferred Dates",
+    "contact.guests": "Number of Guests",
     "contact.date_start": "Check-in",
     "contact.date_end": "Check-out",
     "contact.message": "Your Message",
@@ -250,6 +251,7 @@ const translations = {
     "contact.apartment": "Interessierte Wohnung",
     "contact.other": "Sonstiges / Allgemeine Anfrage",
     "contact.dates": "Bevorzugte Daten",
+    "contact.guests": "Anzahl der Gäste",
     "contact.date_start": "Anreise",
     "contact.date_end": "Abreise",
     "contact.message": "Ihre Nachricht",
@@ -374,6 +376,7 @@ const translations = {
     "contact.apartment": "Apartamento de Interés",
     "contact.other": "Otro / Consulta General",
     "contact.dates": "Fechas Preferidas",
+    "contact.guests": "Número de Huéspedes",
     "contact.date_start": "Entrada",
     "contact.date_end": "Salida",
     "contact.message": "Su Mensaje",
@@ -504,6 +507,7 @@ const translations = {
     "contact.apartment": "Интересующая Квартира",
     "contact.other": "Другое / Общий Запрос",
     "contact.dates": "Предпочтительные Даты",
+    "contact.guests": "Количество Гостей",
     "contact.date_start": "Заезд",
     "contact.date_end": "Выезд",
     "contact.message": "Ваше Сообщение",
@@ -626,30 +630,76 @@ document.addEventListener('DOMContentLoaded', function() {
                              currentLang === 'es' ? '¡Gracias! Su solicitud ha sido enviada.' :
                              currentLang === 'ru' ? 'Спасибо! Ваш запрос был отправлен.' :
                              'Thank you! Your inquiry has been sent.';
-          alert(successMsg);
+          showToast(successMsg, 'success');
           contactForm.reset();
         } else {
           const errorMsg = currentLang === 'de' ? 'Fehler beim Senden. Bitte versuchen Sie es erneut.' :
                              currentLang === 'es' ? 'Error al enviar. Por favor intente de nuevo.' :
                              currentLang === 'ru' ? 'Ошибка отправки. Пожалуйста, попробуйте снова.' :
                              'Error sending. Please try again.';
-          alert(errorMsg + ' ' + (result.message || ''));
+          showToast(errorMsg + ' ' + (result.message || ''), 'error');
         }
       } catch (error) {
         const errorMsg = currentLang === 'de' ? 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.' :
                            currentLang === 'es' ? 'Ocurrió un error. Por favor intente de nuevo.' :
                            currentLang === 'ru' ? 'Произошла ошибка. Пожалуйста, попробуйте снова.' :
                            'An error occurred. Please try again.';
-        alert(errorMsg);
+        showToast(errorMsg, 'error');
       } finally {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }
     });
-  }
 
-  // Animate elements on scroll
-  setupScrollAnimations();
+    // Update guest options based on apartment selection
+    const apartmentSelect = document.querySelector('select[name="apartment"]');
+    const guestsSelect = document.getElementById('guestsSelect');
+    
+    console.log('Apartment select found:', !!apartmentSelect);
+    console.log('Guests select found:', !!guestsSelect);
+
+    if (apartmentSelect && guestsSelect) {
+      console.log('Setting up guest options for apartment:', apartmentSelect.value);
+      const maxGuests = {
+        centro: 11,
+        centro2: 7,
+        miramar1: 2,
+        other: 11
+      };
+
+      const updateGuestOptions = () => {
+        const apartment = apartmentSelect.value;
+        const max = maxGuests[apartment] || 11;
+        
+        const currentValue = guestsSelect.value;
+        
+        guestsSelect.innerHTML = '';
+        for (let i = 1; i <= max; i++) {
+          const option = document.createElement('option');
+          option.value = i;
+          option.textContent = i === 1 ? '1 Guest' : `${i} Guests`;
+          guestsSelect.appendChild(option);
+        }
+        
+        if (currentValue && parseInt(currentValue) <= max) {
+          guestsSelect.value = currentValue;
+        } else if (max >= 2) {
+          guestsSelect.value = '2';
+        } else {
+          guestsSelect.value = String(max);
+        }
+      };
+
+      apartmentSelect.addEventListener('change', () => {
+        console.log('Apartment changed to:', apartmentSelect.value);
+        updateGuestOptions();
+      });
+      updateGuestOptions();
+    }
+
+    // Animate elements on scroll
+    setupScrollAnimations();
+  });
 });
 
 // Set language
@@ -741,6 +791,17 @@ function handleFormSubmit(form) {
          'Thank you! Your email application has been opened.');
   
   form.reset();
+}
+
+// Toast notification function
+function showToast(message, type = 'success') {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = 'toast toast--' + type + ' toast--visible';
+  
+  setTimeout(() => {
+    toast.classList.remove('toast--visible');
+  }, 4000);
 }
 
 // Scroll animations
