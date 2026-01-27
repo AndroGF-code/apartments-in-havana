@@ -121,6 +121,7 @@ const translations = {
     "contact.other": "Other / General Inquiry",
     "contact.dates": "Preferred Dates",
     "contact.guests": "Number of Guests",
+    "contact.price": "Estimated Total Price",
     "contact.date_start": "Check-in",
     "contact.date_end": "Check-out",
     "contact.message": "Your Message",
@@ -129,7 +130,8 @@ const translations = {
     "footer.tagline": "Your home away from home in beautiful Cuba",
     "footer.quick": "Quick Links",
     "footer.languages": "Languages",
-    "footer.rights": "All rights reserved."
+    "footer.rights": "All rights reserved.",
+    "footer.designed": "With <3 designed by Andro García Fagundo"
   },
   de: {
     "cta.photos": "Fotos ansehen",
@@ -252,6 +254,7 @@ const translations = {
     "contact.other": "Sonstiges / Allgemeine Anfrage",
     "contact.dates": "Bevorzugte Daten",
     "contact.guests": "Anzahl der Gäste",
+    "contact.price": "Geschätzter Gesamtpreis",
     "contact.date_start": "Anreise",
     "contact.date_end": "Abreise",
     "contact.message": "Ihre Nachricht",
@@ -260,7 +263,8 @@ const translations = {
     "footer.tagline": "Ihr Zuhause fernab von zu Hause im wunderschönen Kuba",
     "footer.quick": "Schnelllinks",
     "footer.languages": "Sprachen",
-    "footer.rights": "Alle Rechte vorbehalten."
+    "footer.rights": "Alle Rechte vorbehalten.",
+    "footer.designed": "Mit <3 gestaltet von Andro García Fagundo"
   },
   es: {
     "cta.photos": "Ver Fotos",
@@ -377,6 +381,7 @@ const translations = {
     "contact.other": "Otro / Consulta General",
     "contact.dates": "Fechas Preferidas",
     "contact.guests": "Número de Huéspedes",
+    "contact.price": "Precio Total Estimado",
     "contact.date_start": "Entrada",
     "contact.date_end": "Salida",
     "contact.message": "Su Mensaje",
@@ -385,7 +390,8 @@ const translations = {
     "footer.tagline": "Su hogar lejos de casa en el hermoso Cuba",
     "footer.quick": "Enlaces Rápidos",
     "footer.languages": "Idiomas",
-    "footer.rights": "Todos los derechos reservados."
+    "footer.rights": "Todos los derechos reservados.",
+    "footer.designed": "Con <3 diseñado por Andro García Fagundo"
   },
   ru: {
     "cta.photos": "Просмотр фото",
@@ -508,6 +514,7 @@ const translations = {
     "contact.other": "Другое / Общий Запрос",
     "contact.dates": "Предпочтительные Даты",
     "contact.guests": "Количество Гостей",
+    "contact.price": "Расчетная Общая Стоимость",
     "contact.date_start": "Заезд",
     "contact.date_end": "Выезд",
     "contact.message": "Ваше Сообщение",
@@ -516,7 +523,8 @@ const translations = {
     "footer.tagline": "Ваш дом вдали от дома в прекрасной Кубе",
     "footer.quick": "Быстрые Ссылки",
     "footer.languages": "Языки",
-    "footer.rights": "Все права защищены."
+    "footer.rights": "Все права защищены.",
+    "footer.designed": "С <3 разработано Andro García Fagundo"
   }
 };
 
@@ -688,6 +696,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
       apartmentSelect.addEventListener('change', updateGuestOptions);
       updateGuestOptions();
+    }
+
+    // Price calculator
+    const priceCalculator = document.getElementById('priceCalculator');
+
+    const basePrices = {
+      centro: 57,
+      centro2: 55,
+      miramar1: 44,
+      other: 57
+    };
+
+    const pricePerExtraGuest = {
+      centro: 23,
+      centro2: 5,
+      miramar1: 0,
+      other: 0
+    };
+
+    const calculatePrice = function() {
+      if (!priceCalculator || !apartmentSelect || !guestsSelect) return;
+
+      const apartment = apartmentSelect.value;
+      const guests = parseInt(guestsSelect.value) || 1;
+      const startDate = dateStart ? dateStart.value : null;
+      const endDate = dateEnd ? dateEnd.value : null;
+
+      if (!apartment || !startDate || !endDate) {
+        priceCalculator.value = '';
+        return;
+      }
+
+      const basePrice = basePrices[apartment] || 57;
+      const extraGuestRate = pricePerExtraGuest[apartment] || 0;
+      const extraGuests = Math.max(0, guests - 4);
+
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+      let days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+      if (days < 1) days = 1;
+
+      const dailyRate = basePrice + (extraGuests * extraGuestRate);
+      const totalPrice = dailyRate * days;
+
+      priceCalculator.value = '€' + totalPrice + ' (' + days + ' day' + (days > 1 ? 's' : '') + ')';
+    };
+
+    if (priceCalculator && apartmentSelect && guestsSelect) {
+      apartmentSelect.addEventListener('change', function() {
+        updateGuestOptions();
+        calculatePrice();
+      });
+      guestsSelect.addEventListener('change', calculatePrice);
+      if (dateStart) dateStart.addEventListener('change', calculatePrice);
+      if (dateEnd) dateEnd.addEventListener('change', calculatePrice);
+      calculatePrice();
     }
   }
 

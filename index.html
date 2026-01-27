@@ -14,7 +14,7 @@
     <!-- Header -->
     <header class="header">
         <div class="container header__content">
-            <div class="header__logo">🏠 Apartments in Havana</div>
+            <div class="header__logo">Apartments in Havana</div>
             <nav class="header__nav">
                 <a href="#apartments" class="header__nav-link" data-i18n="nav.apartments">Apartments</a>
                 <a href="#location" class="header__nav-link" data-i18n="nav.location">Location</a>
@@ -62,9 +62,9 @@
                              <span class="apartment__feature" data-i18n="feature.highceilings">High Ceilings</span>
                              <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
                          </div>
-                        <div class="apartment__price">
-                            <span data-i18n="price.from">From</span> €85 <span data-i18n="price.perday">/day</span>
-                        </div>
+                         <div class="apartment__price">
+                             <span data-i18n="price.from">From</span> €57 <span data-i18n="price.perday">/day</span>
+                         </div>
                         <button type="button" class="apartment__photos" data-i18n="cta.photos" onclick="openGalleryModal('centro')">View Photos</button>
                         <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="centro">Book Now</a>
                     </div>
@@ -87,9 +87,9 @@
                              <span class="apartment__feature" data-i18n="feature.roofterrace">Rooftop Terrace</span>
                              <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
                          </div>
-                        <div class="apartment__price">
-                            <span data-i18n="price.from">From</span> €75 <span data-i18n="price.perday">/day</span>
-                        </div>
+                         <div class="apartment__price">
+                             <span data-i18n="price.from">From</span> €55 <span data-i18n="price.perday">/day</span>
+                         </div>
                         <button type="button" class="apartment__photos" data-i18n="cta.photos" onclick="openGalleryModal('centro2')">View Photos</button>
                         <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="centro2">Book Now</a>
                     </div>
@@ -113,9 +113,9 @@
                              <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
                              <span class="apartment__feature" data-i18n="feature.rooftop">Rooftop Access</span>
                          </div>
-                        <div class="apartment__price">
-                            <span data-i18n="price.from">From</span> €30 <span data-i18n="price.perday">/day</span>
-                        </div>
+                         <div class="apartment__price">
+                             <span data-i18n="price.from">From</span> €44 <span data-i18n="price.perday">/day</span>
+                         </div>
                         <button type="button" class="apartment__photos" data-i18n="cta.photos" onclick="openGalleryModal('miramar1')">View Photos</button>
                         <a href="#contact" class="apartment__cta" data-i18n="cta.book" data-apartment="miramar1">Book Now</a>
                     </div>
@@ -219,9 +219,13 @@
                             <option value="9">9 Guests</option>
                             <option value="10">10 Guests</option>
                             <option value="11">11 Guests</option>
-                        </select>
-                    </div>
-                    <div class="contact__group">
+                         </select>
+                     </div>
+                     <div class="contact__group">
+                         <label class="contact__label" data-i18n="contact.price">Estimated Total Price</label>
+                         <input type="text" class="contact__input" id="priceCalculator" name="price_calculator" readonly style="background-color: #f5f5f5; cursor: not-allowed;">
+                     </div>
+                     <div class="contact__group">
                         <label class="contact__label" data-i18n="contact.message">Your Message</label>
                         <textarea class="contact__textarea" name="message" required></textarea>
                     </div>
@@ -248,7 +252,7 @@
             <p style="text-align: center; opacity: 0.7; margin-top: 1rem;">
                 © 2026 Apartments in Havana. <span data-i18n="footer.rights">All rights reserved.</span>
             </p>
-            <p style="text-align: center; opacity: 0.7; margin-top: 1.5rem; font-size: 0.85rem; font-style: italic;">
+            <p style="text-align: center; opacity: 0.7; margin-top: 1.5rem; font-size: 0.85rem; font-style: italic;" data-i18n="footer.designed">
                 With &lt;3 designed by Andro García Fagundo
             </p>
         </div>
