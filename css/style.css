@@ -261,7 +261,8 @@ a:hover {
   content: '★';
   display: block;
   font-size: 2rem;
-  color: var(--red-primary);
+  color: white;
+  -webkit-text-stroke: 2px var(--red-primary);
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
@@ -752,13 +753,20 @@ a:hover {
   border: 2px solid var(--secondary-color);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
-.location__map-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
+.location__map .leaflet-control {
+  z-index: 2 !important;
+}
+
+.location__map .leaflet-pane {
+  z-index: 1 !important;
+}
+
+.location__map .leaflet-top,
+.location__map .leaflet-bottom {
+  z-index: 2 !important;
 }
 
 @keyframes pulse {
@@ -879,6 +887,21 @@ a:hover {
     height: 40px;
     font-size: 1.4rem;
   }
+
+  .gallery-modal {
+    padding: 1rem;
+  }
+
+  .gallery-modal__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .gallery-modal__item {
+    width: 100%;
+    max-width: 350px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -911,6 +934,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
+  justify-items: center;
 }
 
 .gallery-modal__item {
@@ -922,6 +946,8 @@ a:hover {
   box-shadow: var(--shadow-medium);
   border: 3px solid transparent;
   transition: var(--transition-smooth);
+  width: 100%;
+  max-width: 400px;
 }
 
 .gallery-modal__item:hover {
@@ -1015,7 +1041,7 @@ a:hover {
 
 /* Footer */
 .footer {
-  background: var(--text-dark);
+  background: var(--primary-color);
   color: var(--text-light);
   padding: 2rem 0 3rem;
   text-align: center;
@@ -1230,5 +1256,141 @@ a:hover {
 
   .section {
     padding: 5rem 0;
+  }
+}
+
+/* Read More Button */
+.apartment__readmore {
+  display: inline-block;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  margin: 0.5rem 0 1.5rem;
+}
+
+.apartment__readmore:hover {
+  background: var(--primary-color);
+  color: var(--text-light);
+}
+
+/* Apartment Details Modal */
+.apartment-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 62, 80, 0.95);
+  z-index: 3000;
+  padding: 3rem;
+  overflow-y: auto;
+  backdrop-filter: blur(12px);
+}
+
+.apartment-modal--active {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.apartment-modal__close {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  z-index: 3001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  border: 2px solid var(--text-light);
+  font-weight: 400;
+}
+
+.apartment-modal__close:hover {
+  background: var(--secondary-color);
+  border-color: var(--bg-white);
+  transform: rotate(90deg) scale(1.05);
+}
+
+.apartment-modal__title {
+  color: var(--text-light);
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  margin-top: 2.5rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.apartment-modal__content {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.apartment-modal__content p {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .apartment-modal {
+    padding: 2rem 1.5rem;
+  }
+
+  .apartment-modal__title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+  }
+
+  .apartment-modal__close {
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.6rem;
+  }
+
+  .apartment-modal__content {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .apartment-modal {
+    padding: 1.5rem 1rem;
+  }
+
+  .apartment-modal__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .apartment-modal__close {
+    top: 0.8rem;
+    right: 0.8rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+
+  .apartment-modal__content {
+    font-size: 0.95rem;
   }
 }
