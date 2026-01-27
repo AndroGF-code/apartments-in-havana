@@ -194,9 +194,13 @@
                             <option value="other" data-i18n="contact.other">Other / General Inquiry</option>
                         </select>
                     </div>
-                    <div class="contact__group">
+                    <div class="contact__group contact__group--dates">
                         <label class="contact__label" data-i18n="contact.dates">Preferred Dates</label>
-                        <input type="text" class="contact__input" name="dates" placeholder="e.g., March 15-22, 2024">
+                        <div class="contact__dates">
+                            <input type="date" class="contact__input" name="date_start" required>
+                            <span class="contact__dates-separator">→</span>
+                            <input type="date" class="contact__input" name="date_end" required>
+                        </div>
                     </div>
                     <div class="contact__group">
                         <label class="contact__label" data-i18n="contact.message">Your Message</label>

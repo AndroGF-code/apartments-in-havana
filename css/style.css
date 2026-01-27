@@ -979,6 +979,7 @@ a:hover {
   max-width: 700px;
   margin: 0 auto;
   border: 2px solid var(--primary-color);
+  overflow: hidden;
 }
 
 .contact__form {
@@ -1021,6 +1022,55 @@ a:hover {
 .contact__textarea {
   min-height: 180px;
   resize: vertical;
+}
+
+.contact__group--dates {
+  margin-bottom: 0;
+  gap: 0.5rem;
+}
+
+.contact__dates {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact__dates .contact__input {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.contact__dates-separator {
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact__dates {
+    flex-direction: row;
+    gap: 0.3rem;
+  }
+
+  .contact__dates .contact__input {
+    padding: 0.6rem 0.3rem;
+    font-size: 0.85rem;
+    text-align: center;
+    min-width: 0;
+    width: 50%;
+  }
+
+  .contact__dates-separator {
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
 }
 
 .contact__submit {

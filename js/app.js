@@ -120,6 +120,8 @@ const translations = {
     "contact.apartment": "Interested Apartment",
     "contact.other": "Other / General Inquiry",
     "contact.dates": "Preferred Dates",
+    "contact.date_start": "Check-in",
+    "contact.date_end": "Check-out",
     "contact.message": "Your Message",
     "contact.submit": "Send Inquiry",
     "contact.direct": "Or contact us directly:",
@@ -248,6 +250,8 @@ const translations = {
     "contact.apartment": "Interessierte Wohnung",
     "contact.other": "Sonstiges / Allgemeine Anfrage",
     "contact.dates": "Bevorzugte Daten",
+    "contact.date_start": "Anreise",
+    "contact.date_end": "Abreise",
     "contact.message": "Ihre Nachricht",
     "contact.submit": "Anfrage senden",
     "contact.direct": "Oder kontaktieren Sie uns direkt:",
@@ -370,6 +374,8 @@ const translations = {
     "contact.apartment": "Apartamento de Interés",
     "contact.other": "Otro / Consulta General",
     "contact.dates": "Fechas Preferidas",
+    "contact.date_start": "Entrada",
+    "contact.date_end": "Salida",
     "contact.message": "Su Mensaje",
     "contact.submit": "Enviar Consulta",
     "contact.direct": "O contáctenos directamente:",
@@ -498,6 +504,8 @@ const translations = {
     "contact.apartment": "Интересующая Квартира",
     "contact.other": "Другое / Общий Запрос",
     "contact.dates": "Предпочтительные Даты",
+    "contact.date_start": "Заезд",
+    "contact.date_end": "Выезд",
     "contact.message": "Ваше Сообщение",
     "contact.submit": "Отправить Запрос",
     "contact.direct": "Или свяжитесь с нами напрямую:",
@@ -550,6 +558,31 @@ document.addEventListener('DOMContentLoaded', function() {
   // Form submission
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    // Disable past dates
+    const today = new Date().toISOString().split('T')[0];
+    const dateStart = contactForm.querySelector('input[name="date_start"]');
+    const dateEnd = contactForm.querySelector('input[name="date_end"]');
+
+    if (dateStart) {
+      dateStart.min = today;
+    }
+    if (dateEnd) {
+      dateEnd.min = today;
+    }
+
+    if (dateStart && dateEnd) {
+      dateStart.addEventListener('change', function() {
+        dateEnd.min = this.value;
+        if (dateEnd.value && dateEnd.value < this.value) {
+          dateEnd.value = this.value;
+        }
+      });
+
+      dateEnd.addEventListener('change', function() {
+        dateStart.max = this.value;
+      });
+    }
+
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       handleFormSubmit(this);
