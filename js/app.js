@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', function() {
         other: 11
       };
 
-      const updateGuestOptions = () => {
+      const updateGuestOptions = function() {
         const apartment = apartmentSelect.value;
         const max = maxGuests[apartment] || 11;
         
@@ -681,7 +681,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 1; i <= max; i++) {
           const option = document.createElement('option');
           option.value = i;
-          option.textContent = i === 1 ? '1 Guest' : `${i} Guests`;
+          option.textContent = i;
           guestsSelect.appendChild(option);
         }
         
@@ -694,7 +694,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       };
 
-      apartmentSelect.addEventListener('change', updateGuestOptions);
+      apartmentSelect.addEventListener('change', function() {
+        updateGuestOptions();
+        calculatePrice();
+      });
       updateGuestOptions();
     }
 
@@ -740,14 +743,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const dailyRate = basePrice + (extraGuests * extraGuestRate);
       const totalPrice = dailyRate * days;
 
-      priceCalculator.value = '€' + totalPrice + ' (' + days + ' day' + (days > 1 ? 's' : '') + ')';
+      const nightsText = currentLang === 'de' ? (days === 1 ? 'Nacht' : 'Nächte') : 
+                         currentLang === 'es' ? (days === 1 ? 'noche' : 'noches') : 
+                         currentLang === 'ru' ? (days === 1 ? 'ночь' : 'ночей') : 
+                         (days === 1 ? 'night' : 'nights');
+      priceCalculator.value = '€' + totalPrice + ' (' + days + ' ' + nightsText + ')';
     };
 
     if (priceCalculator && apartmentSelect && guestsSelect) {
-      apartmentSelect.addEventListener('change', function() {
-        updateGuestOptions();
-        calculatePrice();
-      });
       guestsSelect.addEventListener('change', calculatePrice);
       if (dateStart) dateStart.addEventListener('change', calculatePrice);
       if (dateEnd) dateEnd.addEventListener('change', calculatePrice);
