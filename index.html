@@ -55,12 +55,13 @@
                          <p data-i18n="apartment.centro.description">Beautiful colonial apartment for rent in the heart of Havana. It is located centrally, in the authentic district of Centro Havana! It is only 150 meters away from the famous waterfront Malecón with its magnificent sunsets. In addition to the fresh breeze from the nearby ocean all bedrooms are equipped with air conditioning. The colonial building stems from the pre-revolutionary period, namely from 1923, and still emanates the old majestic spirit.</p>
                          <button type="button" class="apartment__readmore" data-i18n="cta.readmore" onclick="openApartmentModal('centro')">Read more</button>
                          <div class="apartment__features">
-                            <span class="apartment__feature" data-i18n="feature.180sqm">180m²</span>
-                            <span class="apartment__feature" data-i18n="feature.highceilings">High Ceilings</span>
-                            <span class="apartment__feature" data-i18n="feature.upto8guests">Up to 8 Guests</span>
-                            <span class="apartment__feature" data-i18n="feature.malecon">Near Malecón</span>
-                            <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
-                        </div>
+                             <span class="apartment__feature" data-i18n="feature.180sqm">180m²</span>
+                             <span class="apartment__feature" data-i18n="feature.5bedrooms">5 Bedrooms</span>
+                             <span class="apartment__feature" data-i18n="feature.2bath">2 Bathrooms</span>
+                             <span class="apartment__feature" data-i18n="feature.4balconies">4 Balconies</span>
+                             <span class="apartment__feature" data-i18n="feature.highceilings">High Ceilings</span>
+                             <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
+                         </div>
                         <div class="apartment__price">
                             <span data-i18n="price.from">From</span> €85 <span data-i18n="price.perday">/day</span>
                         </div>
@@ -80,12 +81,12 @@
                          <p data-i18n="apartment.centro2.description">Beautiful colonial flat for up to 7 persons for rent in the heart of Havana. Central with a spacious rooftop, in the authentic district of the residential area of Centro Havana! It is only 140 meters away from the famous waterfront Malecón with its magnificent sunsets and near Old Havana.</p>
                          <button type="button" class="apartment__readmore" data-i18n="cta.readmore" onclick="openApartmentModal('centro2')">Read more</button>
                          <div class="apartment__features">
-                            <span class="apartment__feature" data-i18n="feature.upto7guests">Up to 7 Guests</span>
-                            <span class="apartment__feature" data-i18n="feature.roofterrace">Rooftop Terrace</span>
-                            <span class="apartment__feature" data-i18n="feature.malecon">Near Malecón</span>
-                            <span class="apartment__feature" data-i18n="feature.oldhavana">Near Old Havana</span>
-                            <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
-                        </div>
+                             <span class="apartment__feature" data-i18n="feature.132sqm">132m²</span>
+                             <span class="apartment__feature" data-i18n="feature.3bedrooms">3 Bedrooms</span>
+                             <span class="apartment__feature" data-i18n="feature.3bathrooms">3 Bathrooms</span>
+                             <span class="apartment__feature" data-i18n="feature.roofterrace">Rooftop Terrace</span>
+                             <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
+                         </div>
                         <div class="apartment__price">
                             <span data-i18n="price.from">From</span> €75 <span data-i18n="price.perday">/day</span>
                         </div>
@@ -105,12 +106,13 @@
                          <p data-i18n="apartment.miramar1.description">The 1-room flat (approx. 45 square meters or 480 square feet at 2nd floor) is located in the northwest of Havana's capital Havana, in the noble and quiet city quarter "Miramar". It is one of the best quarters of the whole town with the highest level of security. It is perfect if you wish to relax and wish to be away from the roar and noise of Old Havana. You may enjoy romantic sunsets at the rooftop and enjoy the view on the sea.</p>
                          <button type="button" class="apartment__readmore" data-i18n="cta.readmore" onclick="openApartmentModal('miramar1')">Read more</button>
                          <div class="apartment__features">
-                            <span class="apartment__feature" data-i18n="feature.45sqm">45m²</span>
-                            <span class="apartment__feature" data-i18n="feature.2guests">2 Guests</span>
-                            <span class="apartment__feature" data-i18n="feature.1bath">1 Bathroom</span>
-                            <span class="apartment__feature" data-i18n="feature.rooftop">Rooftop Access</span>
-                            <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
-                        </div>
+                             <span class="apartment__feature" data-i18n="feature.45sqm">45m²</span>
+                             <span class="apartment__feature" data-i18n="feature.1room">1 Bedroom</span>
+                             <span class="apartment__feature" data-i18n="feature.1bath">1 Bathroom</span>
+                             <span class="apartment__feature" data-i18n="feature.balconies">Balcony</span>
+                             <span class="apartment__feature" data-i18n="feature.ac">Air Conditioning</span>
+                             <span class="apartment__feature" data-i18n="feature.rooftop">Rooftop Access</span>
+                         </div>
                         <div class="apartment__price">
                             <span data-i18n="price.from">From</span> €30 <span data-i18n="price.perday">/day</span>
                         </div>
@@ -253,8 +255,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const map = L.map('locationMap', {
-                center: [23.1330, -82.3900],
-                zoom: 14,
+                center: [23.1225, -82.4050],
+                zoom: 12,
                 scrollWheelZoom: false
             });
 
@@ -264,17 +266,17 @@
 
             const apartments = [
                 {
-                    coords: [23.1355, -82.3813],
+                    coords: [23.140550, -82.365921],
                     title: 'Centro Havana - Large Colonial',
                     desc: '104 Campanario, between Lagunas and Animas'
                 },
                 {
-                    coords: [23.1340, -82.3830],
+                    coords: [23.140619, -82.365170],
                     title: 'Centro Havana - Majestic',
                     desc: '108 Manrique, between Lagunas and Animas'
                 },
                 {
-                    coords: [23.1295, -82.3980],
+                    coords: [23.104411, -82.444654],
                     title: 'Miramar - 1 Room',
                     desc: '3ra A, between 86 and 88'
                 }
