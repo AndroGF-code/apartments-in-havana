@@ -813,6 +813,7 @@ a:hover {
   box-shadow: var(--shadow-medium);
   transition: var(--transition-smooth);
   border: 2px solid var(--bg-light);
+  cursor: pointer;
 }
 
 .service:hover {
@@ -1390,7 +1391,10 @@ a:hover {
 }
 
 .apartment-modal--active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   animation: fadeIn 0.3s ease-out;
 }
 

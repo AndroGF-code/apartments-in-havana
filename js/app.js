@@ -131,7 +131,8 @@ const translations = {
     "footer.quick": "Quick Links",
     "footer.languages": "Languages",
     "footer.rights": "All rights reserved.",
-    "footer.designed": "With <3 designed by Andro García Fagundo"
+    "footer.designed": "With <3 designed by Andro García Fagundo",
+    "service.modal.text": "For further information, please ask us the specifics in the contact form below, or ask our local manager in Cuba, Loly."
   },
   de: {
     "cta.photos": "Fotos ansehen",
@@ -264,7 +265,8 @@ const translations = {
     "footer.quick": "Schnelllinks",
     "footer.languages": "Sprachen",
     "footer.rights": "Alle Rechte vorbehalten.",
-    "footer.designed": "Mit <3 gestaltet von Andro García Fagundo"
+    "footer.designed": "Mit <3 gestaltet von Andro García Fagundo",
+    "service.modal.text": "Für weitere Informationen fragen Sie uns bitte nach den Einzelheiten im Kontaktformular unten oder fragen Sie unseren lokalen Manager in Kuba, Loly."
   },
   es: {
     "cta.photos": "Ver Fotos",
@@ -391,7 +393,8 @@ const translations = {
     "footer.quick": "Enlaces Rápidos",
     "footer.languages": "Idiomas",
     "footer.rights": "Todos los derechos reservados.",
-    "footer.designed": "Con <3 diseñado por Andro García Fagundo"
+    "footer.designed": "Con <3 diseñado por Andro García Fagundo",
+    "service.modal.text": "Para más información, consúltenos los detalles en el formulario de contacto abaixo, o consulte a nuestro gerente local en Cuba, Loly."
   },
   ru: {
     "cta.photos": "Просмотр фото",
@@ -524,7 +527,8 @@ const translations = {
     "footer.quick": "Быстрые Ссылки",
     "footer.languages": "Языки",
     "footer.rights": "Все права защищены.",
-    "footer.designed": "С <3 разработано Andro García Fagundo"
+    "footer.designed": "С <3 разработано Andro García Fagundo",
+    "service.modal.text": "Для получения дополнительной информации, пожалуйста, уточните детали в контактной форме ниже или обратитесь к нашему местному менеджеру на Кубе, Loly."
   }
 };
 
@@ -957,12 +961,25 @@ function closeApartmentModal() {
   document.body.style.overflow = '';
 }
 
+function showServiceModal() {
+  const modal = document.getElementById('serviceModal');
+  modal.classList.add('apartment-modal--active');
+  document.body.style.overflow = 'hidden';
+}
+
+function hideServiceModal() {
+  const modal = document.getElementById('serviceModal');
+  modal.classList.remove('apartment-modal--active');
+  document.body.style.overflow = '';
+}
+
 // Close modals with Escape key
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closeLightbox();
     closeGalleryModal();
     closeApartmentModal();
+    hideServiceModal();
   }
 });
 

@@ -137,32 +137,32 @@
         <div class="container">
             <h2 class="section__title" data-i18n="services.title">Our Additional Services</h2>
             <div class="services">
-                <div class="service fade-in">
+                <div class="service fade-in" onclick="showServiceModal()">
                     <div class="service__icon">📚</div>
                     <h3 class="service__title" data-i18n="service.spanish.title">Spanish Lessons</h3>
                     <p data-i18n="service.spanish.description">Individual Spanish lessons with experienced teachers. Learn the language during your stay!</p>
                 </div>
-                <div class="service fade-in" style="animation-delay: 0.1s;">
+                <div class="service fade-in" style="animation-delay: 0.1s;" onclick="showServiceModal()">
                     <div class="service__icon">💃</div>
                     <h3 class="service__title" data-i18n="service.salsa.title">Salsa Lessons</h3>
                     <p data-i18n="service.salsa.description">Learn to dance Salsa with experienced instructors and go out to experience Cuban nightlife!</p>
                 </div>
-                <div class="service fade-in" style="animation-delay: 0.2s;">
+                <div class="service fade-in" style="animation-delay: 0.2s;" onclick="showServiceModal()">
                     <div class="service__icon">🏙️</div>
                     <h3 class="service__title" data-i18n="service.tours.title">City Tours</h3>
                     <p data-i18n="service.tours.description">Guided tours to discover Havana's historic center, beaches, and hidden gems.</p>
                 </div>
-                <div class="service fade-in" style="animation-delay: 0.3s;">
+                <div class="service fade-in" style="animation-delay: 0.3s;" onclick="showServiceModal()">
                     <div class="service__icon">🍽️</div>
                     <h3 class="service__title" data-i18n="service.food.title">Restaurant Recommendations</h3>
                     <p data-i18n="service.food.description">Recommendations for the best places to eat and drink well in Havana.</p>
                 </div>
-                <div class="service fade-in" style="animation-delay: 0.4s;">
+                <div class="service fade-in" style="animation-delay: 0.4s;" onclick="showServiceModal()">
                     <div class="service__icon">💆</div>
                     <h3 class="service__title" data-i18n="service.massage.title">Massages</h3>
                     <p data-i18n="service.massage.description">Corporal massages and cosmetic facial treatments available upon request.</p>
                 </div>
-                <div class="service fade-in" style="animation-delay: 0.5s;">
+                <div class="service fade-in" style="animation-delay: 0.5s;" onclick="showServiceModal()">
                     <div class="service__icon">🧺</div>
                     <h3 class="service__title" data-i18n="service.laundry.title">Laundry Service</h3>
                     <p data-i18n="service.laundry.description">Washing service available at a very reasonable price.</p>
@@ -170,6 +170,14 @@
             </div>
         </div>
     </section>
+
+    <!-- Service Info Modal -->
+    <div class="apartment-modal" id="serviceModal">
+        <button class="apartment-modal__close" onclick="hideServiceModal()">×</button>
+        <div class="apartment-modal__content" style="text-align: center;">
+            <p data-i18n="service.modal.text" style="font-size: 1.3rem; line-height: 1.9;">For further information, please ask us the specifics in the contact form below, or ask our local manager in Cuba, Loly.</p>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
