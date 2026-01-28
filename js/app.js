@@ -968,16 +968,16 @@ const apartmentGalleries = {
     'images/centro/10.jpg'
   ],
   centro2: [
-    'images/centro2/01.jpeg',
-    'images/centro2/02.jpeg',
-    'images/centro2/03.jpeg',
-    'images/centro2/04.jpeg',
-    'images/centro2/05.jpeg',
-    'images/centro2/06.jpeg',
-    'images/centro2/07.jpeg',
-    'images/centro2/08.jpeg',
-    'images/centro2/09.jpeg',
-    'images/centro2/10.jpeg'
+    'images/centro2/01.webp',
+    'images/centro2/02.webp',
+    'images/centro2/03.webp',
+    'images/centro2/04.webp',
+    'images/centro2/05.webp',
+    'images/centro2/06.webp',
+    'images/centro2/07.webp',
+    'images/centro2/08.webp',
+    'images/centro2/09.webp',
+    'images/centro2/10.webp'
   ],
   miramar1: [
     'images/miramar1/01.jpg',
