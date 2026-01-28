@@ -1381,6 +1381,16 @@ a:hover {
   overflow-y: auto;
 }
 
+.service-modal.apartment-modal--active {
+  justify-content: center;
+  align-items: center;
+}
+
+.service-modal.apartment-modal--active .apartment-modal__content {
+  flex: 0;
+  overflow-y: visible;
+}
+
 .apartment-modal__close {
   position: fixed;
   top: 1.5rem;
