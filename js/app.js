@@ -956,39 +956,39 @@ function setupScrollAnimations() {
 // Apartment Gallery Data
 const apartmentGalleries = {
   centro: [
-    'https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/afa93b92-84aa-4e19-8198-1f81a3ca8772.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/b32038c7-b268-4426-924d-a9b6fa142630.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/70562807/d8affb73_original.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/e0366e3c-8d64-4ca2-a470-f8b9945f0e7a.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/70563774/226bd98b_original.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/70563862/98c0352f_original.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/656d0a71-1049-450a-825b-aa6b4e6cb84e.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/6f9bcfe4-8e8e-46e9-8701-2de50bcc9266.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/faf67365-1d77-4ff1-8cf5-3ebc869b4c4b.jpg?aki_policy=xx_large'
+    'images/centro/01.jpg',
+    'images/centro/02.jpg',
+    'images/centro/03.jpg',
+    'images/centro/04.jpg',
+    'images/centro/05.jpg',
+    'images/centro/06.jpg',
+    'images/centro/07.jpg',
+    'images/centro/08.jpg',
+    'images/centro/09.jpg',
+    'images/centro/10.jpg'
   ],
   centro2: [
-    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/fa6a634c-8fd4-4fba-99d1-25797727e8b4.jpeg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/42e1e5ce-13da-4026-8919-69daa4266116.jpeg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/62bb4054-a93b-42ec-b699-90b8c049b702.jpeg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/c8a4354a-867a-4553-9c7a-50851065d010.jpeg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/edd95ca7-02a7-4421-b1fc-88ab39db0e72.jpeg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/miso/Hosting-1306706057774735834/original/788db39c-a5b5-4c4f-8195-212d85c269fb.jpeg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMwNjcwNjA1Nzc3NDczNTgzNA%3D%3D/original/19f235e6-6e8e-4fab-8a5f-27ce4e4397c1.jpeg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMwNjcwNjA1Nzc3NDczNTgzNA%3D%3D/original/b41a9720-e4af-42d7-a364-e1182a7b6d2d.jpeg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMwNjcwNjA1Nzc3NDczNTgzNA%3D%3D/original/fe7ebe80-3997-40b0-ae0c-38987af6d4b0.jpeg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMwNjcwNjA1Nzc3NDczNTgzNA%3D%3D/original/c464cd38-647e-4a5d-8f0d-88be5ebe174a.jpeg?aki_policy=xx_large'
+    'images/centro2/01.jpeg',
+    'images/centro2/02.jpeg',
+    'images/centro2/03.jpeg',
+    'images/centro2/04.jpeg',
+    'images/centro2/05.jpeg',
+    'images/centro2/06.jpeg',
+    'images/centro2/07.jpeg',
+    'images/centro2/08.jpeg',
+    'images/centro2/09.jpeg',
+    'images/centro2/10.jpeg'
   ],
   miramar1: [
-    'https://a0.muscache.com/im/pictures/70503319/cf341536_original.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/b1600bc7-57f5-47e0-bb1f-2511b02615c5.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/72397177/57b1c730_original.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/c301bcbb-0394-4317-a28c-a51fc99ce1d9.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/70504510/d754888e_original.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/70505441/c4c1d569_original.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/adf6dfd5-1ff8-480c-a4d1-9330a682c046.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/4167843f-c6ac-4e5c-8fe3-04f1d93e67b0.jpg?aki_policy=xx_large',
-    'https://a0.muscache.com/im/pictures/4395911c-e417-445d-9ab4-ea4df53381aa.jpg?aki_policy=xx_large'
+    'images/miramar1/01.jpg',
+    'images/miramar1/02.jpg',
+    'images/miramar1/03.jpg',
+    'images/miramar1/04.jpg',
+    'images/miramar1/05.jpg',
+    'images/miramar1/06.jpg',
+    'images/miramar1/07.jpg',
+    'images/miramar1/08.jpg',
+    'images/miramar1/09.jpg'
   ]
 };
 
@@ -1077,7 +1077,7 @@ function openGalleryModal(apartmentType) {
     item.onclick = function() { openLightbox(imgUrl); };
 
     const img = document.createElement('img');
-    img.src = imgUrl.replace('w=1200', 'w=400');
+    img.src = imgUrl;
     img.alt = 'Apartment photo';
     img.className = 'gallery-modal__image';
 

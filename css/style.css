@@ -177,7 +177,7 @@ a:hover {
 .hero {
   background:
     linear-gradient(135deg, rgba(207, 20, 43, 0.8), rgba(0, 42, 143, 0.85)),
-    url('https://a0.muscache.com/im/pictures/c5879c94-47b8-47d6-ae89-9fa920bfe607.jpg?w=1920') center/cover;
+    url('../images/hero/hero.jpg') center/cover;
   background-attachment: fixed;
   color: var(--text-light);
   padding: 7rem 0 2rem 0;
