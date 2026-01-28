@@ -367,6 +367,30 @@ a:hover {
   .hero__subtitle {
     margin-bottom: 2.8rem;
   }
+
+  .apartment__title {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .apartment__location {
+    margin-bottom: 1.8rem;
+    font-size: 1.05rem;
+  }
+
+  .apartment__description {
+    margin-bottom: 2.5rem;
+  }
+
+  .apartment__features {
+    margin-bottom: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .apartment__feature {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
 }
 
 .apartment__image::after {
@@ -444,50 +468,6 @@ a:hover {
   transition: var(--transition-fast);
   text-transform: uppercase;
   letter-spacing: 0.2px;
-}
-
-.apartment__title {
-  font-size: 1.9rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-}
-
-.apartment__location {
-  color: var(--text-medium);
-  margin-bottom: 1.8rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.apartment__description {
-  color: var(--text-medium);
-  margin-bottom: 2.5rem;
-  line-height: 1.8;
-  font-weight: 400;
-}
-
-.apartment__features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 3rem;
-  margin-top: 1.5rem;
-}
-
-.apartment__feature {
-  background: var(--bg-light);
-  padding: 0.25rem 0.6rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  color: var(--text-dark);
-  font-weight: 700;
-  border: 2px solid var(--bg-light);
-  transition: var(--transition-fast);
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
 }
 
 @media (max-width: 768px) {

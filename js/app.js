@@ -182,7 +182,7 @@ const translations = {
     `,
     "apartment.miramar1.title": "Miramar - 1 Zimmer",
     "apartment.miramar1.location": "📍 3ra A, zwischen 86 und 88",
-    "apartment.miramar1.description": "Die 1-Zimmer-Wohnung (ca. 45 Quadratmeter oder 480 Quadratfuß im 2. Stock) liegt im Nordwesten der kubanischen Hauptstadt Havanna, im edlen und ruhigen Stadtviertel 'Miramar'. Es ist eines der besten Viertel der ganzen Stadt mit dem höchsten Sicherheitsstandard. Sie ist perfekt, wenn Sie sich entsorgen möchten und weg vom Lärm des alten Havanna. Sie können romantische Sonnenuntergänge auf dem Dach genießen und den Blick auf das Meer genießen.",
+    "apartment.miramar1.description": "Die 1-Zimmer-Wohnung (ca. 45 Quadratmeter oder 480 Quadratfuß im 2. Stock) liegt im Nordwesten der kubanischen Hauptstadt Havanna, im edlen und ruhigen Stadtviertel 'Miramar'. Es ist eines der besten Viertel der ganzen Stadt mit dem höchsten Sicherheitsstandard. Sie ist perfekt, wenn Sie sich entspannen möchten und weg vom Lärm des alten Havanna. Sie können romantische Sonnenuntergänge auf dem Dach genießen und den Blick auf das Meer genießen.",
     "apartment.miramar1.modal": `
       <p><strong>Der Raum</strong></p>
       <p>Die Wohnung hat ein Bad mit Dusche, eine kleine Küche und ein schönes Wohnzimmer, das durch viele Fenster und einen Balkon von Sonnenlicht durchflutet wird. Das Schlafzimmer ist klimatisiert. Von einer Wendeltreppe in der Wohnung können Sie das Dach erreichen, sich sonnen und den Blick auf das Meer genießen. In dieser Hinsicht ist die Wohnung perfekt nicht nur für Singles, sondern auch für Paare.</p>
@@ -394,7 +394,7 @@ const translations = {
     "footer.languages": "Idiomas",
     "footer.rights": "Todos los derechos reservados.",
     "footer.designed": "Con <3 diseñado por Andro García Fagundo",
-    "service.modal.text": "Para más información, consúltenos los detalles en el formulario de contacto abaixo, o consulte a nuestro gerente local en Cuba, Loly."
+    "service.modal.text": "Para más información, consúltenos los detalles en el formulario de contacto abajo, o consulte a nuestro gerente local en Cuba, Loly."
   },
   ru: {
     "cta.photos": "Просмотр фото",
@@ -890,6 +890,7 @@ function openGallery(apartmentType) {
 }
 
 // Form submission handler
+// Original mailto handler - kept for reference but not used since we now use Web3Forms
 function handleFormSubmit(form) {
   const formData = new FormData(form);
   const data = {};
