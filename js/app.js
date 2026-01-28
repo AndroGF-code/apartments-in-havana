@@ -956,16 +956,16 @@ function setupScrollAnimations() {
 // Apartment Gallery Data
 const apartmentGalleries = {
   centro: [
-    'images/centro/01.jpg',
-    'images/centro/02.jpg',
-    'images/centro/03.jpg',
-    'images/centro/04.jpg',
-    'images/centro/05.jpg',
-    'images/centro/06.jpg',
-    'images/centro/07.jpg',
-    'images/centro/08.jpg',
-    'images/centro/09.jpg',
-    'images/centro/10.jpg'
+    'images/centro/01.webp',
+    'images/centro/02.webp',
+    'images/centro/03.webp',
+    'images/centro/04.webp',
+    'images/centro/05.webp',
+    'images/centro/06.webp',
+    'images/centro/07.webp',
+    'images/centro/08.webp',
+    'images/centro/09.webp',
+    'images/centro/10.webp'
   ],
   centro2: [
     'images/centro2/01.webp',
@@ -980,15 +980,15 @@ const apartmentGalleries = {
     'images/centro2/10.webp'
   ],
   miramar1: [
-    'images/miramar1/01.jpg',
-    'images/miramar1/02.jpg',
-    'images/miramar1/03.jpg',
-    'images/miramar1/04.jpg',
-    'images/miramar1/05.jpg',
-    'images/miramar1/06.jpg',
-    'images/miramar1/07.jpg',
-    'images/miramar1/08.jpg',
-    'images/miramar1/09.jpg'
+    'images/miramar1/01.webp',
+    'images/miramar1/02.webp',
+    'images/miramar1/03.webp',
+    'images/miramar1/04.webp',
+    'images/miramar1/05.webp',
+    'images/miramar1/06.webp',
+    'images/miramar1/07.webp',
+    'images/miramar1/08.webp',
+    'images/miramar1/09.webp'
   ]
 };
 
