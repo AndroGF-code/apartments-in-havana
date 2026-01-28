@@ -574,10 +574,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Form submission via Web3Forms
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    // Disable past dates
+    // Get form elements
     const today = new Date().toISOString().split('T')[0];
     const dateStart = contactForm.querySelector('input[name="date_start"]');
     const dateEnd = contactForm.querySelector('input[name="date_end"]');
+    const apartmentSelect = document.querySelector('select[name="apartment"]');
+    const guestsSelect = document.getElementById('guestsSelect');
 
     if (dateStart && dateEnd) {
       // Always enforce past dates are disabled
@@ -728,9 +730,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Update guest options based on apartment selection
-    const apartmentSelect = document.querySelector('select[name="apartment"]');
-    const guestsSelect = document.getElementById('guestsSelect');
-
     if (apartmentSelect && guestsSelect) {
       const maxGuests = {
         centro: 11,
