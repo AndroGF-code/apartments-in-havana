@@ -1077,6 +1077,7 @@ function openGalleryModal(apartmentType) {
     item.onclick = function() { openLightbox(imgUrl); };
 
     const img = document.createElement('img');
+    img.loading = 'lazy';
     img.src = imgUrl;
     img.alt = 'Apartment photo';
     img.className = 'gallery-modal__image';
@@ -1095,10 +1096,21 @@ function closeGalleryModal() {
   document.body.style.overflow = '';
 }
 
+// Preload gallery images after page loads
+function preloadGalleryImages() {
+  Object.values(apartmentGalleries).forEach(images => {
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  });
+}
+
 // Load saved language preference
 window.addEventListener('load', function() {
   const savedLang = localStorage.getItem('preferredLang');
   if (savedLang && translations[savedLang]) {
     setLanguage(savedLang);
   }
+  preloadGalleryImages();
 });
